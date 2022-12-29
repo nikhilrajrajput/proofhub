@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+</head>
+<body>
+
+    <form method="post" name="sample">
+        <br>
+        First Name. <input type="text" name="firstname">
+        Last Name. <input type="text" name="lastname">
+        department. <input type="text" name="department">
+        <input type="button" name="add" value="Add data" onclick="addStudent();"><hr>
+        <table id="tb1" class="table">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Department</th>
+            </thead>
+
+
+        </table>
+
+    </form>
+
+    <script type="text/javascript">
+
+        function addStudent() 
+        {
+            
+            var firstname=document.sample.firstname.value;
+            var lastname=document.sample.lastname.value;
+            var department=document.sample.department.value;
+            
+            var tr= document.createElement('tr');
+            
+            var td1= tr.appendChild(document.createElement('td'))
+            var td2= tr.appendChild(document.createElement('td'))
+            var td3= tr.appendChild(document.createElement('td'))
+            td1.innerHTML=firstname;
+            td2.innerHTML=lastname;
+            td3.innerHTML=department;
+            document.querySelector("#tb1").appendChild(tr)
+        }
+    </script>
+    
+</body>
+</html>
